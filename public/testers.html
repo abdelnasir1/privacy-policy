@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>برنامج اختبار التطبيق</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #64748b;
+      --blue: #2563eb;
+      --blue-dark: #1d4ed8;
+      --blue-soft: #eff6ff;
+      --line: #dbe4f0;
+      --surface: #ffffff;
+      --background: #f5f8fc;
+      --green: #0f766e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans Arabic", sans-serif;
+      background: var(--background);
+      color: var(--ink);
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(135deg, #eaf3ff 0%, #ffffff 100%);
+      border-bottom: 1px solid var(--line);
+      padding: 3.5rem 1.25rem 3rem;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.6rem;
+    }
+
+    header h1 {
+      font-size: clamp(1.8rem, 5vw, 2.7rem);
+      line-height: 1.35;
+      margin-bottom: 0.8rem;
+    }
+
+    header p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+
+    .intro,
+    .steps,
+    .image-slot {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .intro p,
+    .steps p {
+      color: #475569;
+    }
+
+    .widgets {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .widget {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--blue);
+      border-radius: 12px;
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .widget-number {
+      color: var(--blue);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .widget h2 {
+      font-size: 1.15rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .widget p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+      flex: 1;
+    }
+
+    .widget a {
+      background: var(--blue);
+      border-radius: 8px;
+      color: #fff;
+      display: inline-block;
+      font-weight: 700;
+      padding: 0.65rem 0.9rem;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .widget a:hover {
+      background: var(--blue-dark);
+    }
+
+    .steps ol {
+      padding-right: 1.4rem;
+      color: #475569;
+    }
+
+    .steps li {
+      margin-bottom: 0.55rem;
+    }
+
+    .image-slot {
+      min-height: 190px;
+      background: #eef3f8;
+      border-style: dashed;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .image-slot img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .note {
+      background: var(--blue-soft);
+      border-right: 4px solid var(--green);
+      border-radius: 8px;
+      color: #334155;
+      padding: 1rem 1.2rem;
+    }
+
+    footer {
+      color: var(--muted);
+      font-size: 0.875rem;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    @media (max-width: 720px) {
+      .widgets {
+        grid-template-columns: 1fr;
+      }
+
+      header {
+        padding-top: 2.5rem;
+      }
+
+      .intro,
+      .steps,
+      .image-slot {
+        padding: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">برنامج اختبار التطبيق</div>
+    <h1>ساعدنا في تحسين التطبيق قبل إطلاقه</h1>
+    <p>ملاحظاتك وتجربتك اليومية تساعدنا على تقديم تطبيق أكثر استقراراً وفائدة للجميع.</p>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>لماذا نحتاج إلى مختبرين؟</h2>
+      <p>
+        اختبار التطبيق قبل إطلاقه للجميع خطوة مهمة للتأكد من أن كل شيء يعمل كما ينبغي على أجهزة وأنظمة مختلفة.
+        قد تظهر بعض المشكلات فقط عند استخدام التطبيق في ظروف حقيقية، مثل بطء الاتصال أو اختلاف حجم الشاشة أو طريقة استخدام معينة.
+      </p>
+      <p>
+        بصفتك مختبراً، أنت تساعدنا على اكتشاف الأخطاء مبكراً، وتحسين سهولة الاستخدام، والتأكد من أن الخطوات واضحة وآمنة.
+        ملاحظتك البسيطة قد تمنع مشكلة تواجه عدداً كبيراً من المستخدمين بعد الإطلاق.
+      </p>
+    </section>
+
+    <div class="widgets">
+      <article class="widget">
+        <div class="widget-number">01</div>
+        <h2>انضم إلى مجموعة المختبرين</h2>
+        <p>انضم إلى مجموعة Google للحصول على أخبار الاختبار وأي تعليمات أو تحديثات جديدة.</p>
+        <!-- استبدل الرابط التالي برابط Google Group الحقيقي -->
+        <a href="https://groups.google.com/" target="_blank" rel="noopener">رابط مجموعة Google</a>
+      </article>
+
+      <article class="widget">
+        <div class="widget-number">02</div>
+        <h2>جرّب التطبيق</h2>
+        <p>افتح رابط التطبيق، استخدم الميزات الأساسية، وجرّبه بالطريقة التي تستخدم بها التطبيقات عادة.</p>
+        <!-- استبدل الرابط التالي برابط التطبيق الحقيقي -->
+        <a href="https://example.com/app" target="_blank" rel="noopener">رابط التطبيق</a>
+      </article>
+
+      <article class="widget">
+        <div class="widget-number">03</div>
+        <h2>أرسل ملاحظاتك</h2>
+        <p>أخبرنا بما نجح وما يحتاج إلى تحسين، وأرفق صورة للشاشة عند ظهور أي مشكلة.</p>
+        <!-- استبدل الرابط التالي برابط نموذج الملاحظات الحقيقي -->
+        <a href="https://example.com/feedback" target="_blank" rel="noopener">إرسال الملاحظات</a>
+      </article>
+    </div>
+
+    <section class="steps">
+      <h2>كيف تساعدنا؟</h2>
+      <ol>
+        <li>استخدم التطبيق بشكل طبيعي وحاول تجربة الميزات المختلفة.</li>
+        <li>لاحظ أي خطأ أو خطوة غير واضحة أو أداء بطيء.</li>
+        <li>أرسل وصفاً مختصراً للمشكلة، مع ذكر نوع الجهاز والخطوات التي أدت إليها.</li>
+        <li>شارك رأيك في سهولة الاستخدام وما الذي يمكن أن يجعل تجربتك أفضل.</li>
+      </ol>
+      <div class="note">لا يشترط أن تكون لديك خبرة تقنية. أهم شيء هو استخدام التطبيق بصدق ومشاركة ملاحظات واضحة.</div>
+    </section>
+
+    <section class="image-slot">
+      <!-- يمكنك استبدال هذا القسم بصورة تشرح خطوات الاختبار -->
+      <span>مساحة مخصصة لإضافة صورة أو شرح مرئي لخطوات الاختبار</span>
+      <!-- مثال: <img src="/images/testing-guide.png" alt="شرح خطوات اختبار التطبيق" /> -->
+    </section>
+  </main>
+
+  <footer>
+    <a href="/">الرئيسية</a> · <a href="/about.html">من نحن</a> · <a href="/terms.html">شروط الاستخدام</a>
+  </footer>
+</body>
+</html>
