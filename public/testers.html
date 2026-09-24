@@ -29,6 +29,7 @@
       color: var(--ink);
       line-height: 1.8;
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
     header {
@@ -36,6 +37,26 @@
       border-bottom: 1px solid var(--line);
       padding: 3.5rem 1.25rem 3rem;
       text-align: center;
+    }
+
+    .logo-placeholder {
+      align-items: center;
+      background: #dbeafe;
+      border: 1px solid #bfdbfe;
+      border-radius: 16px;
+      color: var(--blue);
+      display: flex;
+      height: 88px;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      overflow: hidden;
+      width: 88px;
+    }
+
+    .logo-placeholder img {
+      height: 100%;
+      object-fit: contain;
+      width: 100%;
     }
 
     .eyebrow {
@@ -83,6 +104,12 @@
     .intro p,
     .steps p {
       color: #475569;
+    }
+
+    .requirement-highlight {
+      color: #7e3fb2;
+      font-weight: 800;
+      white-space: nowrap;
     }
 
     .widgets {
@@ -146,19 +173,44 @@
     }
 
     .image-slot {
-      min-height: 190px;
-      background: #eef3f8;
-      border-style: dashed;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      background: var(--surface);
+      color: var(--ink);
     }
 
-    .image-slot img {
-      width: 100%;
-      border-radius: 8px;
+    .listing-heading {
+      margin-bottom: 1rem;
+      text-align: right;
+    }
+
+    .listing-heading p {
+      color: var(--muted);
+      margin-top: 0.35rem;
+    }
+
+    .listing-gallery {
+      display: flex;
+      gap: 0.9rem;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+      overscroll-behavior-x: contain;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scrollbar-color: var(--blue) #e5edf7;
+      scrollbar-width: thin;
+      touch-action: pan-x;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .listing-gallery img {
+      aspect-ratio: 9 / 16;
+      background: #eef3f8;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      display: block;
+      flex: 0 0 clamp(190px, 24vw, 220px);
+      object-fit: cover;
+      scroll-snap-align: start;
+      width: clamp(190px, 24vw, 220px);
     }
 
     .note {
@@ -195,13 +247,43 @@
       .image-slot {
         padding: 1.3rem;
       }
+
+      .listing-gallery {
+        direction: ltr;
+        gap: 0.75rem;
+        margin-inline: -0.35rem;
+        padding-inline: 0.35rem;
+        scroll-padding-inline: 0.35rem;
+      }
+
+      .listing-gallery img {
+        flex-basis: min(78vw, 300px);
+        width: min(78vw, 300px);
+      }
+
+      .widget {
+        padding: 1.2rem;
+      }
+
+      .widget a {
+        min-height: 46px;
+        padding: 0.7rem 0.9rem;
+      }
+
+      .steps ol {
+        padding-right: 1.2rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="eyebrow">برنامج اختبار التطبيق</div>
-    <h1>ساعدنا في تحسين التطبيق قبل إطلاقه</h1>
+    <div class="logo-placeholder">
+      <!-- ضع ملف الشعار باسم logo.png داخل مجلد public -->
+      <img src="/logo.png" alt="شعار تطبيق الحلول" />
+    </div>
+    <div class="eyebrow">اختبار تطبيق الحلول</div>
+    <h1>ساعدنا في إطلاق تطبيق الحلول</h1>
     <p>ملاحظاتك وتجربتك اليومية تساعدنا على تقديم تطبيق أكثر استقراراً وفائدة للجميع.</p>
   </header>
 
@@ -214,7 +296,7 @@
       </p>
       <p>
         بصفتك مختبراً، أنت تساعدنا على اكتشاف الأخطاء مبكراً، وتحسين سهولة الاستخدام، والتأكد من أن الخطوات واضحة وآمنة.
-        ملاحظتك البسيطة قد تمنع مشكلة تواجه عدداً كبيراً من المستخدمين بعد الإطلاق.
+        ملاحظتك البسيطة قد تمنع مشكلة تواجه عدداً كبيراً من المستخدمين بعد الإطلاق. تحتاج Google إلى <span class="requirement-highlight">12 مختبراً</span> للمشاركة في الاختبار لمدة <span class="requirement-highlight">14 يوماً</span>، وكل نشاط أو استخدام من المختبرين يساعدنا على إكمال الاختبار ودعم إطلاق التطبيق.
       </p>
     </section>
 
@@ -224,23 +306,23 @@
         <h2>انضم إلى مجموعة المختبرين</h2>
         <p>انضم إلى مجموعة Google للحصول على أخبار الاختبار وأي تعليمات أو تحديثات جديدة.</p>
         <!-- استبدل الرابط التالي برابط Google Group الحقيقي -->
-        <a href="https://groups.google.com/" target="_blank" rel="noopener">رابط مجموعة Google</a>
+        <a href="https://groups.google.com/g/maazsolutionstesters" target="_blank" rel="noopener">رابط مجموعة Google</a>
       </article>
 
       <article class="widget">
         <div class="widget-number">02</div>
         <h2>جرّب التطبيق</h2>
-        <p>افتح رابط التطبيق، استخدم الميزات الأساسية، وجرّبه بالطريقة التي تستخدم بها التطبيقات عادة.</p>
+        <p>بعد إكمال الخطوة الأولى والانضمام إلى مجموعة Google، افتح رابط التطبيق واستخدم ميزاته الأساسية بالطريقة التي تستخدم بها التطبيقات عادة.</p>
         <!-- استبدل الرابط التالي برابط التطبيق الحقيقي -->
-        <a href="https://example.com/app" target="_blank" rel="noopener">رابط التطبيق</a>
+        <a href="https://play.google.com/store/apps/details?id=com.maazplatform.solutions" target="_blank" rel="noopener">رابط التطبيق</a>
       </article>
 
       <article class="widget">
-        <div class="widget-number">03</div>
-        <h2>أرسل ملاحظاتك</h2>
-        <p>أخبرنا بما نجح وما يحتاج إلى تحسين، وأرفق صورة للشاشة عند ظهور أي مشكلة.</p>
-        <!-- استبدل الرابط التالي برابط نموذج الملاحظات الحقيقي -->
-        <a href="https://example.com/feedback" target="_blank" rel="noopener">إرسال الملاحظات</a>
+        <div class="widget-number">03 · اختياري</div>
+        <h2>انضم إلى مجموعة واتساب <small>(اختياري)</small></h2>
+        <p>انضم إلى مجموعة واتساب الخاصة بتطبيق الحلول لمتابعة النقاشات ومشاركة ملاحظاتك مع فريق الاختبار.</p>
+        <!-- استبدل الرابط التالي برابط مجموعة واتساب الحقيقي -->
+        <a href="https://chat.whatsapp.com/K6rXgJGmbK61ZSAQcOKEep" target="_blank" rel="noopener">انضم إلى واتساب</a>
       </article>
     </div>
 
@@ -256,14 +338,23 @@
     </section>
 
     <section class="image-slot">
-      <!-- يمكنك استبدال هذا القسم بصورة تشرح خطوات الاختبار -->
-      <span>مساحة مخصصة لإضافة صورة أو شرح مرئي لخطوات الاختبار</span>
-      <!-- مثال: <img src="/images/testing-guide.png" alt="شرح خطوات اختبار التطبيق" /> -->
+      <div class="listing-heading">
+        <h2>صور التطبيق</h2>
+      </div>
+      <div class="listing-gallery">
+        <!-- أضف الصور داخل public/listing بهذه الأسماء -->
+        <img src="/listing/1.jpg" alt="لقطة شاشة من تطبيق الحلول 1" />
+        <img src="/listing/2.jpg" alt="لقطة شاشة من تطبيق الحلول 2" />
+        <img src="/listing/3.jpg" alt="لقطة شاشة من تطبيق الحلول 3" />
+        <img src="/listing/4.jpg" alt="لقطة شاشة من تطبيق الحلول 4" />
+        <img src="/listing/5.jpg" alt="لقطة شاشة من تطبيق الحلول 5" />
+        <img src="/listing/6.jpg" alt="لقطة شاشة من تطبيق الحلول 6" />
+      </div>
     </section>
   </main>
 
   <footer>
-    <a href="/">الرئيسية</a> · <a href="/about.html">من نحن</a> · <a href="/terms.html">شروط الاستخدام</a>
+    <a href="/about.html">من نحن</a> · <a href="/terms.html">شروط الاستخدام</a>
   </footer>
 </body>
 </html>
