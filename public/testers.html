@@ -6,15 +6,16 @@
   <title>برنامج اختبار التطبيق</title>
   <style>
     :root {
-      --ink: #172033;
-      --muted: #64748b;
-      --blue: #2563eb;
-      --blue-dark: #1d4ed8;
-      --blue-soft: #eff6ff;
-      --line: #dbe4f0;
+      --ink: #24133f;
+      --muted: #6d6280;
+      --blue: #7839ab;
+      --blue-dark: #4f2379;
+      --blue-soft: #f4eaff;
+      --line: #eadff4;
       --surface: #ffffff;
-      --background: #f5f8fc;
-      --green: #0f766e;
+      --background: #faf7ff;
+      --green: #ff2d8d;
+      --yellow: #ffd52e;
     }
 
     * {
@@ -25,7 +26,7 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans Arabic", sans-serif;
-      background: var(--background);
+      background: radial-gradient(circle at 12% 10%, #f0dfff 0, transparent 30%), var(--background);
       color: var(--ink);
       line-height: 1.8;
       min-height: 100vh;
@@ -33,18 +34,20 @@
     }
 
     header {
-      background: linear-gradient(135deg, #eaf3ff 0%, #ffffff 100%);
-      border-bottom: 1px solid var(--line);
+      background: linear-gradient(120deg, #2b1648 0%, #612b8b 48%, #f02b82 100%);
+      border-bottom: 4px solid var(--yellow);
+      color: #ffffff;
       padding: 3.5rem 1.25rem 3rem;
       text-align: center;
     }
 
     .logo-placeholder {
       align-items: center;
-      background: #dbeafe;
-      border: 1px solid #bfdbfe;
-      border-radius: 16px;
-      color: var(--blue);
+      background: rgba(255, 255, 255, 0.14);
+      border: 2px solid rgba(255, 213, 46, 0.85);
+      border-radius: 50%;
+      box-shadow: 0 8px 20px rgba(25, 8, 45, 0.35);
+      color: #ffffff;
       display: flex;
       height: 88px;
       justify-content: center;
@@ -60,7 +63,7 @@
     }
 
     .eyebrow {
-      color: var(--blue);
+      color: var(--yellow);
       font-size: 0.9rem;
       font-weight: 700;
       letter-spacing: 0.03em;
@@ -74,10 +77,51 @@
     }
 
     header p {
-      color: var(--muted);
+      color: rgba(255, 255, 255, 0.84);
       max-width: 650px;
       margin: 0 auto;
       font-size: 1.05rem;
+    }
+
+    .header-link {
+      background: var(--yellow);
+      border-radius: 8px;
+      color: var(--blue-dark);
+      display: inline-block;
+      font-weight: 700;
+      margin-top: 1.25rem;
+      padding: 0.65rem 1rem;
+      text-decoration: none;
+    }
+
+    .header-link:hover {
+      background: #ffffff;
+      color: var(--blue-dark);
+    }
+
+    .page-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      justify-content: center;
+      margin-top: 1.25rem;
+    }
+
+    .page-links a {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      color: #ffffff;
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
+      text-decoration: none;
+      transition: background-color 160ms ease, color 160ms ease;
+    }
+
+    .page-links a:hover,
+    .page-links a[aria-current="page"] {
+      background: var(--yellow);
+      color: #2b1648;
     }
 
     main {
@@ -103,11 +147,11 @@
 
     .intro p,
     .steps p {
-      color: #475569;
+      color: var(--muted);
     }
 
     .requirement-highlight {
-      color: #7e3fb2;
+      color: var(--blue);
       font-weight: 800;
       white-space: nowrap;
     }
@@ -122,7 +166,7 @@
     .widget {
       background: var(--surface);
       border: 1px solid var(--line);
-      border-top: 4px solid var(--blue);
+      border-top: 4px solid var(--green);
       border-radius: 12px;
       padding: 1.4rem;
       display: flex;
@@ -165,7 +209,7 @@
 
     .steps ol {
       padding-right: 1.4rem;
-      color: #475569;
+      color: var(--muted);
     }
 
     .steps li {
@@ -195,7 +239,7 @@
       overscroll-behavior-x: contain;
       scroll-behavior: smooth;
       scroll-snap-type: x mandatory;
-      scrollbar-color: var(--blue) #e5edf7;
+      scrollbar-color: var(--blue) #eee4f7;
       scrollbar-width: thin;
       touch-action: pan-x;
       -webkit-overflow-scrolling: touch;
@@ -203,7 +247,7 @@
 
     .listing-gallery img {
       aspect-ratio: 9 / 16;
-      background: #eef3f8;
+      background: #f2eafa;
       border: 1px solid var(--line);
       border-radius: 10px;
       display: block;
@@ -214,10 +258,10 @@
     }
 
     .note {
-      background: var(--blue-soft);
+      background: linear-gradient(135deg, var(--blue-soft), #fff5d0);
       border-right: 4px solid var(--green);
       border-radius: 8px;
-      color: #334155;
+      color: var(--ink);
       padding: 1rem 1.2rem;
     }
 
@@ -285,6 +329,11 @@
     <div class="eyebrow">اختبار تطبيق الحلول</div>
     <h1>ساعدنا في إطلاق تطبيق الحلول</h1>
     <p>ملاحظاتك وتجربتك اليومية تساعدنا على تقديم تطبيق أكثر استقراراً وفائدة للجميع.</p>
+    <nav class="page-links" aria-label="روابط الموقع">
+      <a href="/">الرئيسية</a>
+      <a href="/about.html">عن التطبيق</a>
+      <a href="/terms.html">شروط الاستخدام</a>
+    </nav>
   </header>
 
   <main>
@@ -304,7 +353,7 @@
       <article class="widget">
         <div class="widget-number">01</div>
         <h2>انضم إلى مجموعة المختبرين</h2>
-        <p>انضم إلى مجموعة Google للحصول على أخبار الاختبار وأي تعليمات أو تحديثات جديدة.</p>
+        <p>انضم إلى مجموعة Google للحصول على أخبار الاختبار وأي تعليمات أو تحديثات جديدة. بعد أن تصبح عضواً، ستحصل على وصول مبكر إلى التطبيق على متجر Google Play.</p>
         <!-- استبدل الرابط التالي برابط Google Group الحقيقي -->
         <a href="https://groups.google.com/g/maazsolutionstesters" target="_blank" rel="noopener">رابط مجموعة Google</a>
       </article>
@@ -354,7 +403,7 @@
   </main>
 
   <footer>
-    <a href="/about.html">من نحن</a> · <a href="/terms.html">شروط الاستخدام</a>
+    <a href="/about.html">عن التطبيق</a> · <a href="/terms.html">شروط الاستخدام</a>
   </footer>
 </body>
 </html>

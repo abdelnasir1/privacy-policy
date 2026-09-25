@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Service</title>
+  <title>شروط الاستخدام | الحلول</title>
   <style>
+    :root {
+      --purple: #7839ab;
+      --purple-dark: #4f2379;
+      --pink: #ff2d8d;
+      --yellow: #ffd52e;
+      --ink: #24133f;
+      --muted: #6d6280;
+      --line: #eadff4;
+      --surface: #ffffff;
+      --background: #faf7ff;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -14,28 +26,31 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.65;
-      color: #1a1a1a;
-      background: #f8f9fa;
+      color: var(--ink);
+      background: var(--background);
       min-height: 100vh;
     }
 
     header {
-      background: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
-      padding: 1.5rem 1rem;
+      background: linear-gradient(120deg, #2b1648 0%, #612b8b 48%, #f02b82 100%);
+      border-bottom: 4px solid var(--yellow);
+      color: #ffffff;
+      padding: 2.5rem 1rem 2rem;
       text-align: center;
     }
 
     .logo {
-      width: 80px;
-      height: 80px;
-      background: #e5e7eb;
+      width: 76px;
+      height: 76px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid rgba(255, 213, 46, 0.8);
       border-radius: 50%;
+      box-shadow: 0 8px 20px rgba(25, 8, 45, 0.35);
       margin: 0 auto 0.75rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #6b7280;
+      color: #ffffff;
       font-size: 0.75rem;
       font-weight: 500;
     }
@@ -50,7 +65,32 @@
     header h1 {
       font-size: 1.5rem;
       font-weight: 600;
-      color: #111827;
+      color: #ffffff;
+    }
+
+    .page-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      justify-content: center;
+      margin-top: 1.25rem;
+    }
+
+    .page-links a {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      color: #ffffff;
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
+      text-decoration: none;
+      transition: background-color 160ms ease, color 160ms ease;
+    }
+
+    .page-links a:hover,
+    .page-links a[aria-current="page"] {
+      background: var(--yellow);
+      color: #2b1648;
     }
 
     main {
@@ -60,17 +100,28 @@
     }
 
     .content {
-      background: #ffffff;
-      border-radius: 12px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
       padding: 2rem 1.75rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 12px 30px rgba(93, 42, 128, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .content::before {
+      background: linear-gradient(90deg, var(--pink), var(--yellow));
+      content: "";
+      height: 4px;
+      inset: 0 0 auto;
+      position: absolute;
     }
 
     .content h2 {
       font-size: 1.15rem;
       font-weight: 600;
       margin: 1.75rem 0 0.6rem;
-      color: #111827;
+      color: var(--purple-dark);
     }
 
     .content h2:first-child {
@@ -78,13 +129,14 @@
     }
 
     .content p {
-      color: #4b5563;
+      color: var(--muted);
       margin-bottom: 0.9rem;
     }
 
     .content ul {
-      margin: 0.5rem 0 1rem 1.4rem;
-      color: #4b5563;
+      margin: 0.5rem 0 1rem;
+      padding-right: 1.4rem;
+      color: var(--muted);
     }
 
     .content li {
@@ -93,19 +145,19 @@
 
     .updated {
       font-size: 0.875rem;
-      color: #9ca3af;
+      color: #887a9b;
       margin-bottom: 1.5rem;
     }
 
     footer {
       text-align: center;
       padding: 1.5rem;
-      color: #9ca3af;
+      color: #887a9b;
       font-size: 0.875rem;
     }
 
     footer a {
-      color: #6b7280;
+      color: var(--purple);
       text-decoration: none;
     }
 
@@ -116,68 +168,70 @@
 </head>
 <body>
   <header>
-    <!-- Replace the div with an <img> when you have a real logo -->
     <div class="logo">
-      <!-- <img src="/logo.png" alt="Logo" /> -->
-      Logo
+      <img src="/logo.png" alt="شعار تطبيق Maaz Math" />
     </div>
-    <h1>Terms of Service</h1>
+    <h1>شروط الاستخدام</h1>
+    <nav class="page-links" aria-label="روابط الموقع">
+      <a href="/">الرئيسية</a>
+      <a href="/about.html">عن التطبيق</a>
+      <a href="/testers">خطوات الاختبار</a>
+    </nav>
   </header>
 
   <main>
     <div class="content">
-      <p class="updated">Last updated: August 30, 2026</p>
+      <p class="updated">آخر تحديث: 30 أغسطس 2026</p>
 
-      <h2>1. Acceptance of Terms</h2>
+      <h2>1. الموافقة على الشروط</h2>
       <p>
-        By accessing or using this website and any related services, you agree to be bound by these Terms of Service.
-        If you do not agree with any part of these terms, you may not use the service.
+        باستخدامك لهذا الموقع وأي خدمات مرتبطة به، فإنك توافق على الالتزام بشروط الاستخدام هذه.
+        إذا كنت لا توافق على أي جزء من هذه الشروط، فلا يجوز لك استخدام الخدمة.
       </p>
 
-      <h2>2. Use of the Service</h2>
-      <p>You agree to use the service only for lawful purposes and in accordance with these terms. You must not:</p>
+      <h2>2. استخدام الخدمة</h2>
+      <p>توافق على استخدام الخدمة لأغراض قانونية فقط وبما يتوافق مع هذه الشروط. ويُمنع عليك:</p>
       <ul>
-        <li>Attempt to gain unauthorized access to any part of the service</li>
-        <li>Interfere with or disrupt the service or servers</li>
-        <li>Use the service to transmit harmful or illegal content</li>
-        <li>Misrepresent your identity or affiliation</li>
+        <li>محاولة الوصول غير المصرح به إلى أي جزء من الخدمة</li>
+        <li>التدخل في الخدمة أو خوادمها أو تعطيلها</li>
+        <li>استخدام الخدمة لإرسال محتوى ضار أو غير قانوني</li>
+        <li>تقديم معلومات غير صحيحة عن هويتك أو انتمائك</li>
       </ul>
 
-      <h2>3. Intellectual Property</h2>
+      <h2>3. الملكية الفكرية</h2>
       <p>
-        All content, trademarks, logos, and materials on this site are the property of the site owner or its licensors
-        and are protected by applicable intellectual property laws. You may not copy, modify, distribute, or use any
-        content without prior written permission.
+        جميع المحتويات والعلامات التجارية والشعارات والمواد الموجودة في هذا الموقع هي ملك لمالك الموقع أو الجهات المرخصة له،
+        وهي محمية بموجب قوانين الملكية الفكرية المعمول بها. لا يجوز لك نسخ أي محتوى أو تعديله أو توزيعه أو استخدامه دون إذن كتابي مسبق.
       </p>
 
-      <h2>4. Disclaimer</h2>
+      <h2>4. إخلاء المسؤولية</h2>
       <p>
-        The service is provided “as is” and “as available” without warranties of any kind, either express or implied.
-        We do not guarantee that the service will be uninterrupted, secure, or error-free.
+        تُقدم الخدمة "كما هي" و"حسب توفرها" دون أي ضمانات صريحة أو ضمنية من أي نوع.
+        ولا نضمن أن تكون الخدمة متاحة دون انقطاع أو آمنة أو خالية من الأخطاء.
       </p>
 
-      <h2>5. Limitation of Liability</h2>
+      <h2>5. حدود المسؤولية</h2>
       <p>
-        To the fullest extent permitted by law, we shall not be liable for any indirect, incidental, special,
-        consequential, or punitive damages arising out of or related to your use of the service.
+        إلى أقصى حد يسمح به القانون، لا نتحمل مسؤولية أي أضرار غير مباشرة أو عرضية أو خاصة أو تبعية أو عقابية
+        تنتج عن استخدامك للخدمة أو تتعلق به.
       </p>
 
-      <h2>6. Changes to These Terms</h2>
+      <h2>6. التغييرات على هذه الشروط</h2>
       <p>
-        We may update these Terms of Service from time to time. The updated version will be indicated by an updated
-        “Last updated” date. Continued use of the service after changes constitutes acceptance of the new terms.
+        قد نقوم بتحديث شروط الاستخدام هذه من وقت لآخر. وستتم الإشارة إلى النسخة المحدثة من خلال تغيير تاريخ "آخر تحديث".
+        ويُعد استمرارك في استخدام الخدمة بعد إجراء التغييرات موافقةً على الشروط الجديدة.
       </p>
 
-      <h2>7. Contact</h2>
+      <h2>7. التواصل معنا</h2>
       <p>
-        If you have any questions about these Terms of Service, please contact us through the contact information
-        provided on the website.
+        إذا كانت لديك أي أسئلة حول شروط الاستخدام هذه، يمكنك التواصل معنا من خلال معلومات الاتصال
+        الموضحة في الموقع.
       </p>
     </div>
   </main>
 
   <footer>
-    <a href="/">Home</a> · <a href="/about.html">About</a>
+    <a href="/">الرئيسية</a> · <a href="/about.html">عن التطبيق</a> · <a href="/testers">اختبار التطبيق</a>
   </footer>
 </body>
 </html>

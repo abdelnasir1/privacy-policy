@@ -6,12 +6,14 @@
   <title>سياسة الخصوصية</title>
   <style>
     :root {
-      --bg: #0f172a;
-      --card: #1e293b;
-      --text: #e2e8f0;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
-      --border: #334155;
+      --bg: #faf7ff;
+      --card: #ffffff;
+      --text: #24133f;
+      --muted: #6d6280;
+      --accent: #7839ab;
+      --pink: #ff2d8d;
+      --yellow: #ffd52e;
+      --border: #eadff4;
     }
 
     * {
@@ -22,7 +24,7 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Arabic", sans-serif;
-      background: var(--bg);
+      background: radial-gradient(circle at 85% 8%, #f3dcff 0, transparent 28%), var(--bg);
       color: var(--text);
       line-height: 1.8;
       min-height: 100vh;
@@ -37,20 +39,63 @@
     header {
       text-align: center;
       margin-bottom: 48px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--border);
+      padding: 1.5rem;
+      border-bottom: 4px solid var(--yellow);
+      border-radius: 16px;
+      background: linear-gradient(120deg, #2b1648 0%, #612b8b 48%, #f02b82 100%);
     }
 
     header h1 {
       font-size: 2rem;
       font-weight: 700;
-      color: var(--accent);
+      color: #ffffff;
       margin-bottom: 8px;
     }
 
+    .logo {
+      width: 76px;
+      height: 76px;
+      margin: 0 auto 1rem;
+      border: 2px solid rgba(255, 213, 46, 0.85);
+      border-radius: 50%;
+      box-shadow: 0 8px 20px rgba(25, 8, 45, 0.35);
+      overflow: hidden;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     header p {
-      color: var(--muted);
+      color: rgba(255, 255, 255, 0.84);
       font-size: 0.95rem;
+    }
+
+    .page-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      justify-content: center;
+      margin-top: 1.25rem;
+    }
+
+    .page-links a {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      color: #ffffff;
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
+      text-decoration: none;
+      transition: background-color 160ms ease, color 160ms ease;
+    }
+
+    .page-links a:hover,
+    .page-links a[aria-current="page"] {
+      background: var(--yellow);
+      color: #2b1648;
     }
 
     section {
@@ -59,6 +104,7 @@
       border-radius: 16px;
       padding: 28px 24px;
       margin-bottom: 20px;
+      box-shadow: 0 12px 30px rgba(93, 42, 128, 0.08);
     }
 
     section h2 {
@@ -86,7 +132,7 @@
     footer {
       text-align: center;
       margin-top: 40px;
-      color: var(--muted);
+      color: #887a9b;
       font-size: 0.85rem;
     }
 
@@ -112,8 +158,16 @@
 <body>
   <div class="container">
     <header>
+      <div class="logo">
+        <img src="/logo.png" alt="شعار تطبيق Maaz Math" />
+      </div>
       <h1>سياسة الخصوصية</h1>
       <p>آخر تحديث: أغسطس 2026</p>
+      <nav class="page-links" aria-label="روابط الموقع">
+        <a href="/about.html">عن التطبيق</a>
+        <a href="/testers">خطوات الاختبار</a>
+        <a href="/terms.html">شروط الاستخدام</a>
+      </nav>
     </header>
 
     <section>
